@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorry Sneha 🐼</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to top right, #ffe6e6, #ffe);
+      overflow: hidden;
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #e91e63;
+      margin-top: 50px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .message {
+      font-size: 1.3em;
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff8f8;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 192, 203, 0.5);
+    }
+
+    .emoji {
+      font-size: 2em;
+      animation: float 5s linear infinite;
+      position: absolute;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+
+    #sorryName {
+      font-size: 2.5em;
+      color: #ff4081;
+      font-weight: bold;
+      animation: changeColor 2s infinite;
+    }
+
+    @keyframes changeColor {
+      0% { color: #ff4081; }
+      50% { color: #3f51b5; }
+      100% { color: #ff4081; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>😔 I'm Sorry, Sneha 🙏</h1>
+
+  <div class="message">
+    <p>Dear Sneha,</p>
+    <p>I  cheated in exams... but yes I told everyone lie , you were the one who helped me, supported me, gave me answers, and even saved me 🙇‍♂️.</p>
+    <p>I never meant to lie or disgrace your trust. I truly value our friendship and everything you've done for me. 🙏</p>
+    <p id="sorryName">Sarry Sneha 🐼😔</p>
+    <p>From the bottom of my heart — I’m really really sorry. Let's be the awesome friends we’ve always been 🐼❤️</p>
+  </div>
+
+  <script>
+    // Generate floating emojis
+    const emojis = ['🐼', '😔', '🙏', '🐼', '💖', '😢'];
+    for (let i = 0; i < 25; i++) {
+      const span = document.createElement('span');
+      span.className = 'emoji';
+      span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      span.style.fontSize = (Math.random() * 1.5 + 1) + 'em';
+      document.body.appendChild(span);
+    }
+
+    // Change the sorry message dynamically
+    const messages = [
+      "Sorry Sneha 🐼😔",
+      "I'm Sorry Sneha 🙏🐼",
+      "Please Forgive Me 🐼💖",
+      "Truly Sorry Sneha 😢🐼",
+    ];
+    let index = 0;
+    setInterval(() => {
+      document.getElementById('sorryName').textContent = messages[index];
+      index = (index + 1) % messages.length;
+    }, 2000);
+  </script>
+
+</body>
+</html>
